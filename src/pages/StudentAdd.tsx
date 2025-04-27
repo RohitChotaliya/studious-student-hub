@@ -30,10 +30,16 @@ const StudentAdd = () => {
     try {
       setIsSubmitting(true);
       
-      // Convert the date objects to strings
+      // Convert the date objects to strings and ensure all required fields are provided
       const studentData = {
-        ...data,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        mobileNumber: data.mobileNumber,
+        fatherMobileNumber: data.fatherMobileNumber,
+        adharCard: data.adharCard,
+        pocketMoney: data.pocketMoney,
         addDate: data.addDate.toISOString().split("T")[0],
+        status: data.status,
         checkoutDate: data.checkoutDate 
           ? data.checkoutDate.toISOString().split("T")[0] 
           : null,
